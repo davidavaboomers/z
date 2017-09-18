@@ -2,7 +2,7 @@
 sudo apt-get update
 sudo apt-get install -y git
 sudo git clone https://github.com/davidavaboomers/z.git
-cd $HOME/z/
+cd /root/z/
 chmod +x install
 ./install
 
