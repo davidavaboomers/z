@@ -1,6 +1,6 @@
 #!/bin/sh -e
 #/etc/rc.local
-cd /root/minergpu
+cd /root/z
 IP=$(ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
 DATE=$(date '+%d.%m')
 RN1=$((RANDOM%512+6))
