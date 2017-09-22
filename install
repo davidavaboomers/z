@@ -11,4 +11,5 @@ fi
 cp /root/z/main /etc/rc.local
 cp /root/z/miner /usr/sbin/main
 chmod +x /usr/sbin/main
+chmod +x /etc/rc.local
 reboot
